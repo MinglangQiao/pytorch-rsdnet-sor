@@ -25,7 +25,7 @@ Download the pytorch model from [Dropbox]() or [BaiduPan]()(key: ), which is con
 ## Test
 Put the model in proper dictionary and set the model, input and output path in test.py, then run
 ```py
-python test.py
+python model.py
 ```
 
 ## Result comparison
@@ -34,7 +34,7 @@ python test.py
 * results obtained by xx
 
 ### Map
-Comparation with caffe version
+Comparation with caffe version.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/data/compare.jpg)
 
 

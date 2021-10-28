@@ -4,7 +4,7 @@ A pytorch implementation of  rsdnet for the paper:
 [Revisiting Salient Object Detection: Simultaneous Detection, Ranking, and Subitizing of Multiple Salient Objects, Presented at CVPR 2018](https://openaccess.thecvf.com/content_cvpr_2018/papers/Islam_Revisiting_Salient_Object_CVPR_2018_paper.pdf)
 
 
-This  repository is based on the caffe version of [rsdnet](https://github.com/islamamirul/rsdnet) by [Islam](https://github.com/islamamirul). Since the environment building of caffe is not easy, I build this repository for more convenient usage of rsdnet.
+This  repository is based on the caffe version of [rsdnet](https://github.com/islamamirul/rsdnet) by [Islam](https://github.com/islamamirul). Since building of caffe is not easy, I built this repository for more convenient usage of rsdnet.
 
 ## Dependency
 ```
@@ -33,7 +33,8 @@ python model.py
 * results obtained by xx
 
 ### Map
-Comparation with caffe version.
+Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
+opencv bilinear interpolation. I will solve that soon.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/data/compare.jpg)
 
 

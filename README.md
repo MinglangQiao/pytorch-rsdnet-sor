@@ -15,7 +15,7 @@ opencv-python
 
 Install them by the [requirements.txt]()
 ```bash
-pip install -r xxx
+pip install -r requirements.txt
 ``` 
 
 ## Model
@@ -34,7 +34,8 @@ python test.py
 * results obtained by xx
 
 ### Map
-
+Comparation with caffe version
+![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/data/compare.jpg)
 
 
 ## Check list

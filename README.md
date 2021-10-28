@@ -19,8 +19,7 @@ pip install -r requirements.txt
 ``` 
 
 ## Model
-Download the pytorch model from [Dropbox]() or [BaiduPan]()(key: ), which is converted from the original [caffe model]() by scripts [caffe2pytorch.py]() and [utils.py]().
-
+Download the pytorch model from [Dropbox](https://www.dropbox.com/s/7du5mgo8a0k5rcn/weights.pkl?dl=0)(key: sorrank) or [BaiduPan](https://pan.baidu.com/s/1dPGJPp-g-m8yWHAc4hmDWA )(key: 652f), which is converted from the original [caffe model]() by scripts [caffe2pytorch.py]() and [utils.py]().
 
 ## Test
 Put the model in proper dictionary and set the model, input and output path in test.py, then run

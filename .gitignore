@@ -1,3 +1,4 @@
 /.vscode/*
 /.idea/*
 /.large_file/*
+*.pkl

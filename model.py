@@ -45,8 +45,6 @@ class RSDNET(nn.Module):
         
         # return x_debug2
         # return x_debug3
-        
-
 
 
 if __name__ == "__main__":

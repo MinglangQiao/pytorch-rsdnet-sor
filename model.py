@@ -78,6 +78,8 @@ if __name__ == "__main__":
         output = rsdnet(input_img) # (1, 1, 376, 504) > caffe: (513, 513)
 
         a1 = output[0, 0, :, :].numpy()
+        print(">>>> a1: ", np.shape(a1))
+        tt
 
         output = UpsamplingBilinear2d(output)
         # output = output.numpy()

@@ -3,8 +3,10 @@ A pytorch implementation of  rsdnet for the paper:
 
 [Revisiting Salient Object Detection: Simultaneous Detection, Ranking, and Subitizing of Multiple Salient Objects, Presented at CVPR 2018](https://openaccess.thecvf.com/content_cvpr_2018/papers/Islam_Revisiting_Salient_Object_CVPR_2018_paper.pdf)
 
+![image](https://github.com/MinglangQiao/pytorch-rsdnet-sor/blob/master/data/rsdnet_framework.PNG)
 
 This  repository is based on the caffe version of [rsdnet](https://github.com/islamamirul/rsdnet) by [Islam](https://github.com/islamamirul). Since building of caffe is not easy, I built this repository for more convenient usage of rsdnet.
+
 
 ## Dependency
 ```
@@ -20,8 +22,6 @@ pip install -r requirements.txt
 
 ## Model
 Download the pytorch model from [Dropbox](https://www.dropbox.com/s/7du5mgo8a0k5rcn/weights.pkl?dl=0)(key: sorrank) or [BaiduPan](https://pan.baidu.com/s/1dPGJPp-g-m8yWHAc4hmDWA )(key: 652f), which is converted from the original [caffe model](https://www.dropbox.com/sh/we3vk0z9nln0jao/AABVOTQ2N9kcBN_gnN2rJ11Wa?dl=0) by scripts [caffe2pytorch.py](https://github.com/MinglangQiao/rsdnet-pytorch/blob/cd8ae1d98b66ea29ecf10f202f54a4f27641859d/scripts/caffe2pytorch.py#L55) and [utils.py](https://github.com/MinglangQiao/rsdnet-pytorch/blob/cd8ae1d98b66ea29ecf10f202f54a4f27641859d/utils.py#L69).
-
-![image](https://github.com/MinglangQiao/pytorch-rsdnet-sor/blob/master/data/rsdnet_framework.PNG)
 
 ## Test
 Put the model in proper dictionary and set the model, input and output path in model.py, then run

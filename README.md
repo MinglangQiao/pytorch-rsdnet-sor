@@ -30,7 +30,7 @@ python test_net.py
 ```
 
 ## Comparison
-### [Result comparison]()
+### [Quantitative result]()
 
 | Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
@@ -39,14 +39,14 @@ python test_net.py
 
 \* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has higher MAE and slightly lower SOR.
 
-### [Inference time comparison]()
+### [Inference time]()
 | Model  | Time (s) |
 | :---  | :---:  |
 | rsdnet-caffe  | xx  |
 | rsdnet-pytorch  | 0.021  |
 
 
-### [Saliency map]()
+### [Saliency map comparison]()
 Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
 opencv bilinear interpolation. I will solve that soon.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/large_file/compare.jpg.png)

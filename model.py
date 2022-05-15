@@ -1,3 +1,4 @@
+from tkinter import ttk
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -78,8 +79,8 @@ if __name__ == "__main__":
         output = rsdnet(input_img) # (1, 1, 376, 504) > caffe: (513, 513)
 
         a1 = output[0, 0, :, :].numpy()
-        print(">>>> a1: ", np.shape(a1))
-        tt
+        # print(">>>> a1: ", np.shape(a1))
+        # tt
 
         output = UpsamplingBilinear2d(output)
         # output = output.numpy()
@@ -90,6 +91,9 @@ if __name__ == "__main__":
         output_img = output_img / np.max(output_img) * 255
         output_img = output_img.astype(np.uint8)
 
+    print(">>> output_img: ", H, W, np.shape(output_img))
+    tt
+    
     ## compare with caffe
     import matplotlib.pyplot as plt
     caffe_result_path = "/home/ml/tmm_ref/rank_related/rsdnet/saliency_maps_salsod_rsdnet_1/266434.png"

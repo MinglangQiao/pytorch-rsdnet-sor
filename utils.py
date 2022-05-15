@@ -45,7 +45,7 @@ def crop_img(input_img, crop_size):
     return input_img
 
 
-def UpsamplingBilinear2d(input_tensor, zoom_factor=8):
+def UpsamplingBilinear2d(input_tensor,  h, w, zoom_factor=8):
     """
     reference: https://github.com/gjs94/YOLOv3-caffe/blob/master/interp.py
     """
@@ -54,13 +54,14 @@ def UpsamplingBilinear2d(input_tensor, zoom_factor=8):
     
     input_np = input_tensor.numpy()
     b, c, h_out, w_out = np.shape(input_np)
-    w_out = w_out + (w_out - 1) * (zoom_factor - 1)
-    h_out = h_out + (h_out - 1) * (zoom_factor - 1)
+    w_out = w_out + (w_out - 1) * (zoom_factor - 1) + 1
+    h_out = h_out + (h_out - 1) * (zoom_factor - 1) + 1
 
     out_imgs = []
     for i_img, img in enumerate(input_np):
         img = np.transpose(img, (1, 2, 0))
-        img = cv2.resize(img, (w_out, h_out), interpolation=cv2.INTER_LINEAR)
+        # img = cv2.resize(img, (w_out, h_out), interpolation=cv2.INTER_LINEAR)
+        img = cv2.resize(img, (w, h), interpolation=cv2.INTER_LINEAR)
         out_imgs.append(img)
 
     return np.array(out_imgs)

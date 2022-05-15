@@ -26,22 +26,24 @@ Download the pytorch model from [Dropbox](https://www.dropbox.com/s/7du5mgo8a0k5
 ## Test
 Put the model in proper dictionary and set the model, input and output path in model.py, then run
 ```py
-python model.py
+python test_net.py
 ```
 
 ## Comparison
-### Result comparison
+### [Result comparison]()
 
 | Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
-| rsdnet-caffe  | xx  | xx  |  xx  |  xx  |  xx  |   xx  | 
-| rsdnet-pytorch  | xx  | xx  |  xx  |  xx  |  xx  |   xx  | 
+| rsdnet-caffe  | 0.8250  | 0.0910  |  xx  |  xx  |  xx  |   xx  | 
+| rsdnet-pytorch  | 0.8230  | <font color='red'>0.0610</font>  |  xx  |  xx  |  xx  |   xx  |
 
-### Inference time comparison
-| Model  | Time (ms) | 
+\* Results are tested on a V100 GPU. As can be seen, the pytorch implementation has higher MAE and slightly lower SOR.
+
+### [Inference time comparison]()
+| Model  | Time (s) |
 | :---  | :---:  |
-| rsdnet-caffe  | xx  | 
-| rsdnet-pytorch  | xx  |
+| rsdnet-caffe  | xx  |
+| rsdnet-pytorch  | 0.021  |
 
 
 ### Map

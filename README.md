@@ -35,7 +35,7 @@ python test_net.py
 | Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
 | rsdnet-caffe  | 0.8250  | 0.0910  |  xx  |  xx  |  xx  |   xx  | 
-| rsdnet-pytorch  | 0.8230  | <font color='red'>0.0610</font>  |  xx  |  xx  |  xx  |   xx  |
+| rsdnet-pytorch  | 0.8230  | [0.0610]() |  xx  |  xx  |  xx  |   xx  |
 
 \* Results are tested on a V100 GPU. As can be seen, the pytorch implementation has higher MAE and slightly lower SOR.
 
@@ -46,7 +46,7 @@ python test_net.py
 | rsdnet-pytorch  | 0.021  |
 
 
-### Map
+### [Saliency map]()
 Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
 opencv bilinear interpolation. I will solve that soon.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/data/compare.jpg)

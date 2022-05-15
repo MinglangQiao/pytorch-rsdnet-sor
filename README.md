@@ -49,7 +49,7 @@ python test_net.py
 ### [Saliency map]()
 Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
 opencv bilinear interpolation. I will solve that soon.
-![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/data/compare.jpg)
+![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/large_file/compare.jpg.png)
 
 
 ## Check list

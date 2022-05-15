@@ -29,10 +29,20 @@ Put the model in proper dictionary and set the model, input and output path in m
 python model.py
 ```
 
-## Result comparison
-### Table
+## Comparison
+### Result comparison
 
-* results obtained by xx
+| Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
+| :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
+| rsdnet-caffe  | xx  | xx  |  xx  |  xx  |  xx  |   xx  | 
+| rsdnet-pytorch  | xx  | xx  |  xx  |  xx  |  xx  |   xx  | 
+
+### Inference time comparison
+| Model  | Time (ms) | 
+| :---  | :---:  |
+| rsdnet-caffe  | xx  | 
+| rsdnet-pytorch  | xx  |
+
 
 ### Map
 Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and

@@ -46,7 +46,7 @@ python test_net.py
 | rsdnet-pytorch  | 0.021  |
 
 
-### [Saliency map comparison]()
+### [Saliency map]()
 Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
 opencv bilinear interpolation. I will solve that soon.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/large_file/compare.jpg)

@@ -32,10 +32,10 @@ python test_net.py
 ## Comparison
 ### [Quantitative result]()
 
-| Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
+| Model  | SOR:arrow_up: | MAE | AUC | max-Fm | med-Fm | avg-Fm |
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
 | rsdnet-caffe  | 0.8250  | 0.0910  |  xx  |  xx  |  xx  |   xx  | 
-| rsdnet-pytorch  | 0.8230  | 0.0910 |  xx  |  xx  |  xx  |   xx  |
+| rsdnet-pytorch  | 0.8280  | 0.0910 |  xx  |  xx  |  xx  |   xx  |
 
 \* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly lower SOR and MAE.
 

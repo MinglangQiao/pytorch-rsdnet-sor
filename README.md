@@ -42,30 +42,30 @@ python test_net.py
 | rsdnet-caffe  | 0.8250  | 0.0910  |  0.063  |
 | rsdnet-pytorch  | 0.8280  | 0.0910 |  0.302  | 
 
-\* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly higher SOR and better MAE.
+* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly higher SOR and same MAE, through slower inference speed.
 
+* The difference is introduced by different implementations of caffe Interp layer of DeepLab and
+Pytorch bilinear interpolation. I tried Opencv, PIL and Pytorch bilinear method, and find that the pytorch version is the best one.
 
 
 ### [Saliency map]()
-Comparison with the caffe version. Currently the difference is introduced by different implementations of caffe Interp layer and
-opencv bilinear interpolation. I will solve that soon.
+Comparison with the caffe version.
 ![image](https://github.com/MinglangQiao/rsdnet-pytorch/blob/master/large_file/compare.jpg)
 
 
 ## Check list
 
 - [x] Test code in pytorch
-- [ ] Recover the original image size as input
-- [ ] performance comparison of pytorch and caffe version  
+- [x] Recover the original image size as input
+- [x] performance comparison of pytorch and caffe version  
 - [ ] Training code in pytorch
 
 ## Results
-The results of the pytorch-rsdnet could be download from xx.
+The results of the pytorch-rsdnet could be download from [Baidu pan, key:fnpr](https://pan.baidu.com/s/109wVcp3yF4BKqgtynwDfOg).
 
-## Details
-* Inter layer in 
 
 ## Reference
 [1] [islamamirul/rsdnet](https://github.com/islamamirul/rsdnet) \
-[2] [Caffe转Pytorch模型系列教程 概述](https://blog.csdn.net/DumpDoctorWang/article/details/88716962)
+[2] [Caffe转Pytorch模型系列教程 概述](https://blog.csdn.net/DumpDoctorWang/article/details/88716962) \
+[3] [kazuto1011/deeplab-pytorch](https://github.com/kazuto1011/deeplab-pytorch)
 

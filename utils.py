@@ -4,6 +4,8 @@ import pickle as pkl
 
 import torch
 from torch import from_numpy
+from PIL import Image
+import torch.nn.functional as F
 
 def normalize_input(input_img, MEAN_VAL=[104.00, 116.669, 122.675]):
     """
@@ -12,6 +14,7 @@ def normalize_input(input_img, MEAN_VAL=[104.00, 116.669, 122.675]):
     mean_value: 116.669 - G
     mean_value: 122.675 - R
     """
+
     input_img = input_img.astype(np.float32) - MEAN_VAL
 
     return input_img
@@ -42,26 +45,44 @@ def crop_img(input_img, crop_size):
         w_off = int((width1 - crop_size) / 2)
         input_img = input_img[h_off:(h_off+crop_size), w_off:(w_off+crop_size), :]
 
-    return input_img
+    return input_img.astype(np.float32)
 
 
-def UpsamplingBilinear2d(input_tensor,  h, w, zoom_factor=8):
+def UpsamplingBilinear2d(input_tensor, zoom_factor=8):
     """
-    reference: https://github.com/gjs94/YOLOv3-caffe/blob/master/interp.py
+    reference: 
+        https://github.com/jasonlovescoding/YOLOv3-caffe
+        https://github.com/jasonlovescoding/YOLOv3-caffe/blob/master/interp.py
     """
     # from scipy import interpolate
     # import scipy.ndimage.interpolation.zoom as scipy_interp
     
     input_np = input_tensor.numpy()
     b, c, h_out, w_out = np.shape(input_np)
-    w_out = w_out + (w_out - 1) * (zoom_factor - 1) + 1
-    h_out = h_out + (h_out - 1) * (zoom_factor - 1) + 1
+    # w_out1, h_out1 =  h_out * zoom_factor, w_out*zoom_factor
+    w_out1 = w_out + (w_out - 1) * (zoom_factor - 1) # see: https://github.com/jasonlovescoding/YOLOv3-caffe
+    h_out1 = h_out + (h_out - 1) * (zoom_factor - 1) 
 
     out_imgs = []
     for i_img, img in enumerate(input_np):
         img = np.transpose(img, (1, 2, 0))
+        ## using opencv
         # img = cv2.resize(img, (w_out, h_out), interpolation=cv2.INTER_LINEAR)
-        img = cv2.resize(img, (w, h), interpolation=cv2.INTER_LINEAR)
+        # img = cv2.resize(img, (w_out1, h_out1), interpolation=cv2.INTER_LINEAR)
+        # img = cv2.resize(img, (w_out1, h_out1), interpolation=cv2.INTER_NEAREST) 
+
+        ## using PIL image
+        # img = Image.fromarray(img[:, :, 0]).resize((h_out1, w_out1), resample=Image.BILINEAR)
+
+        ## using pytorch
+        img = np.transpose(img, (2, 0, 1))
+        img = torch.from_numpy(np.array([img]))
+        img = F.interpolate(img, size=(h_out1, w_out1), mode="bilinear", align_corners=False)
+        img = img.numpy()[0, 0]
+
+        img = np.array(img)
+        
+        # img = cv2.resize(img, (w, h), interpolation=cv2.INTER_LINEAR)
         out_imgs.append(img)
 
     return np.array(out_imgs)

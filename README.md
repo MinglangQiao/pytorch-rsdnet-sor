@@ -35,7 +35,7 @@ python test_net.py
 | Model  | SOR | MAE | AUC | max-Fm | med-Fm | avg-Fm |
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
 | rsdnet-caffe  | 0.8250  | 0.0910  |  xx  |  xx  |  xx  |   xx  | 
-| rsdnet-pytorch  | 0.8230  | 0.1000 |  xx  |  xx  |  xx  |   xx  |
+| rsdnet-pytorch  | 0.8230  | 0.0910 |  xx  |  xx  |  xx  |   xx  |
 
 \* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly lower SOR and MAE.
 
@@ -58,6 +58,12 @@ opencv bilinear interpolation. I will solve that soon.
 - [ ] Recover the original image size as input
 - [ ] performance comparison of pytorch and caffe version  
 - [ ] Training code in pytorch
+
+## Results
+The results of the pytorch-rsdnet could be download from xx.
+
+## Details
+* Inter layer in 
 
 ## Reference
 [1] [islamamirul/rsdnet](https://github.com/islamamirul/rsdnet) \

@@ -32,18 +32,18 @@ python test_net.py
 ## Comparison
 ### [Quantitative result]()
 
-| Model  | SOR:arrow_up: | MAE | AUC | max-Fm | med-Fm | avg-Fm |
+<!-- | Model  | SOR &#8593; | MAE &#8595; | AUC &#8593; | max-Fm &#8593;| med-Fm &#8593; | avg-Fm &#8593;|
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |:---:  |
 | rsdnet-caffe  | 0.8250  | 0.0910  |  xx  |  xx  |  xx  |   xx  | 
-| rsdnet-pytorch  | 0.8280  | 0.0910 |  xx  |  xx  |  xx  |   xx  |
+| rsdnet-pytorch  | 0.8280  | 0.0910 |  xx  |  xx  |  xx  |   xx  | -->
 
-\* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly lower SOR and MAE.
+| Model  | SOR &#8593; | MAE &#8595; | Inference time (s) &#8595; | 
+| :---  | :---:  | :---:  | :---:  |
+| rsdnet-caffe  | 0.8250  | 0.0910  |  0.063  |
+| rsdnet-pytorch  | 0.8280  | 0.0910 |  0.302  | 
 
-### [Inference time]()
-| Model  | Time (s) |
-| :---  | :---:  |
-| rsdnet-caffe  | xx  |
-| rsdnet-pytorch  | 0.021  |
+\* Images are evaluated on a V100 GPU. As can be seen, the pytorch implementation has slightly higher SOR and better MAE.
+
 
 
 ### [Saliency map]()

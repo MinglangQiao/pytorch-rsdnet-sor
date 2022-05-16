@@ -57,12 +57,13 @@ def inference_on_pascals():
             # if H > 513 or W > 513:
             #     tt
 
+            st = time.time()
             input_img = normalize_input(input_img)
             input_img = crop_img(input_img, crop_size)
             
-            caff_input = np.load("/mnt/disk10T/minglang/tmm_ref/rank_related/rsdnet/caffe_crop.npy")
-            diff = input_img - caff_input
-            diff_value = np.sum(diff)
+            # caff_input = np.load("/mnt/disk10T/minglang/tmm_ref/rank_related/rsdnet/caffe_crop.npy")
+            # diff = input_img - caff_input
+            # diff_value = np.sum(diff)
 
             # show_diff = np.concatenate((diff[:, :, 0], diff[:, :, 1], diff[:, :, 2]), axis=1)
             # plt.imshow(show_diff)
@@ -74,12 +75,8 @@ def inference_on_pascals():
             input_img = torch.from_numpy(np.expand_dims(input_img, 0)).permute(0, 3, 1, 2).float()  # (1, h, w, c) to (1, c, h, 3)
             input_img = input_img.cuda()
 
-            st = time.time()
             output = rsdnet(input_img) # (1, 1, 376, 504) > caffe: (513, 513)
-            ct = time.time() - st
-            all_img_time.append(ct)
-
-            a1 = output[0, 0, :, :].cpu().numpy()
+            # a1 = output[0, 0, :, :].cpu().numpy()
             # cv2.imwrite("./out_10_pytorch.png", a1.astype(np.uint8))
 
             # caff_output = np.load("/mnt/disk10T/minglang/tmm_ref/rank_related/rsdnet/out_10_caffe.npy")
@@ -99,6 +96,9 @@ def inference_on_pascals():
             output = UpsamplingBilinear2d(output.cpu())
             ## using caffe output
             
+            ct = time.time() - st
+            all_img_time.append(ct)
+
             # output = output.numpy()
 
             output_img = output[0, 0:H, 0:W] # output[0]
@@ -131,7 +131,7 @@ def inference_on_pascals():
             # cv2.imwrite(pytorch_result_path, output_img)
             misc.toimage(output_img, cmin = 0.0, cmax = 255).save(pytorch_result_path)
             # tt
-        print(">>>> time: ", np.mean(all_img_time))
+        print(">>>> time: ", np.mean(all_img_time), len(all_img_time))
         pbar.close()
 
 if __name__ == "__main__":

@@ -61,7 +61,7 @@ Comparison with the caffe version.
 - [ ] Training code in pytorch
 
 ## Results
-The results of the pytorch-rsdnet could be download from [Baidu pan, key:fnpr](https://pan.baidu.com/s/109wVcp3yF4BKqgtynwDfOg).
+The results of the pytorch-rsdnet on PASCAL-S could be download from [Baidu pan, key:fnpr](https://pan.baidu.com/s/109wVcp3yF4BKqgtynwDfOg).
 
 
 ## Reference

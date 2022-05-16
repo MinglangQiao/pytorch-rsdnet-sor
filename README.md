@@ -42,7 +42,7 @@ python test_net.py
 | rsdnet-caffe  | 0.8250  | 0.0910  |  0.063  |
 | rsdnet-pytorch  | 0.8280  | 0.0910 |  0.302  | 
 
-* Results are evaluated on a V100 GPU for all 425 images of the test set of PASCAL-S. As can be seen, the pytorch implementation has slightly higher SOR and same MAE, through slower inference speed.
+* Results are evaluated on a V100 GPU for all 425 test images of PASCAL-S. As can be seen, the pytorch implementation has slightly higher SOR and same MAE, through slower inference speed.
 
 * The difference is introduced by different implementations of caffe Interp layer of DeepLab and
 Pytorch bilinear interpolation. I tried Opencv, PIL and Pytorch bilinear method, and find that the pytorch version is the best one.
